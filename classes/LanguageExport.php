@@ -93,7 +93,8 @@ class LanguageExport {
 				header("Content-Length: {$filesize}");
 				header('Content-Disposition: attachment; filename="'.$name.'"');
 				header('Last-Modified: ' . gmdate('D, d M Y H:i:s \G\M\T', time()));
-				readfile($file);		
+				readfile($file);
+				OssnFile::DeleteDir($this->temp_dir);
 				exit;
 		}
 }
