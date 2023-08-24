@@ -73,6 +73,7 @@ class LanguageExport {
 						if(!$file->isDir()) {
 								$filePath     = $file->getRealPath();
 								$relativePath = substr($filePath, strlen($rootPath) + 1);
+								$relativePath = str_replace('\\', '/', $relativePath);
 								$zip->addFile($filePath, $relativePath);
 						}
 				}
